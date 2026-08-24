@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Game</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="app"></canvas>
+    <div id="hud">
+      <div>WASD / Arrow keys to drive</div>
+      <div id="hud-keys">forward: – back: – left: – right: –</div>
+      <div id="hud-speed">speed: –</div>
+    </div>
+    <div id="capture-popup">Alien Captured!</div>
+    <div id="intro-popup">Capture all aliens</div>
+    <div id="win-popup">Congratulations! You saved the planet!</div>
+    <div id="alien-counter">Aliens: 0 / 13</div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
