@@ -242,11 +242,6 @@ export class Car {
     // unnoticeable) landing snap once it naturally reaches groundY.
     const airGravityMultiplier = this.airborneTime > MAX_AIRBORNE_TIME ? 8 : 1;
 
-    // Exposed for the HUD debug readout only.
-    this.debugGroundY = groundY;
-    this.debugCanLaunch = this.isAirborne;
-    this.debugIsGrounded = isGrounded;
-
     // Only turn while rolling (like real front-wheel steering), and
     // rotate the chassis immediately so we can re-align velocity to
     // the new heading in this same frame. Doing that a frame late is

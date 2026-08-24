@@ -6,6 +6,7 @@ import { InputController } from './input.js';
 import { Alien } from './alien.js';
 import { buildSaucer } from './saucer.js';
 import { buildLunarBase } from './lunarBase.js';
+import { buildLunarLander } from './lunarLander.js';
 
 const canvas = document.getElementById('app');
 
@@ -90,6 +91,7 @@ const input = new InputController();
 
 buildSaucer(scene, world, groundMaterial, 103.7, 238.3);
 buildLunarBase(scene, world, groundMaterial, -110.4, -256.6);
+buildLunarLander(scene, world, groundMaterial, 40, -60);
 
 // Scattered across the map, clear of spawn and the boundary walls. One
 // sits right under the flying saucer.
@@ -111,8 +113,6 @@ const ALIEN_POSITIONS = [
 const aliens = ALIEN_POSITIONS.map(([x, z]) => new Alien(scene, x, z));
 let capturedCount = 0;
 
-const hudKeys = document.getElementById('hud-keys');
-const hudSpeed = document.getElementById('hud-speed');
 const capturePopup = document.getElementById('capture-popup');
 const introPopup = document.getElementById('intro-popup');
 const winPopup = document.getElementById('win-popup');
@@ -185,9 +185,6 @@ function animate() {
   updateCamera();
   updateSunLight();
   starfield.position.copy(camera.position);
-
-  hudKeys.textContent = `forward: ${input.state.forward} back: ${input.state.backward} left: ${input.state.left} right: ${input.state.right}`;
-  hudSpeed.textContent = `speed: ${car.body.velocity.length().toFixed(2)} pos: ${car.body.position.x.toFixed(1)}, ${car.body.position.y.toFixed(1)}, ${car.body.position.z.toFixed(1)} | grounded: ${car.debugIsGrounded} airborne: ${car.debugCanLaunch} groundY: ${car.debugGroundY.toFixed(2)} vy: ${car.body.velocity.y.toFixed(2)}`;
 
   renderer.render(scene, camera);
   requestAnimationFrame(animate);

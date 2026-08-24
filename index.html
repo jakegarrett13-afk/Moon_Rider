@@ -8,15 +8,20 @@
   </head>
   <body>
     <canvas id="app"></canvas>
-    <div id="hud">
-      <div>WASD / Arrow keys to drive</div>
-      <div id="hud-keys">forward: – back: – left: – right: –</div>
-      <div id="hud-speed">speed: –</div>
-    </div>
     <div id="capture-popup">Alien Captured!</div>
     <div id="intro-popup">Capture all aliens</div>
     <div id="win-popup">Congratulations! You saved the planet!</div>
     <div id="alien-counter">Aliens: 0 / 13</div>
+    <div id="mobile-controls">
+      <div class="ctrl-group">
+        <button id="btn-left" class="ctrl-btn" aria-label="Turn left">◀</button>
+        <button id="btn-right" class="ctrl-btn" aria-label="Turn right">▶</button>
+      </div>
+      <div class="ctrl-group ctrl-group-vertical">
+        <button id="btn-forward" class="ctrl-btn" aria-label="Forward">▲</button>
+        <button id="btn-back" class="ctrl-btn" aria-label="Reverse">▼</button>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
